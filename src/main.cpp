@@ -13,7 +13,6 @@ int main (void)
     show_splash_screen();
 
     do {
-        bool is_draw = true;
         int winner = 0, max_dice = 1;
 
         for (register int i = 0; i < PLAYERS; i++)
@@ -29,14 +28,7 @@ int main (void)
             }
         }
 
-        for (register int dice = 0; dice < PLAYERS; dice++) {
-            if (dice > 0 && dice_roll[dice] != dice_roll[dice-1]) {
-                is_draw = false;
-                break;
-            }
-        }
-
-        print_winner(winner, max_dice, is_draw);
+        print_winner(winner, max_dice, check_draw(dice_roll, PLAYERS));
 
     } while (play_again());
 

@@ -72,13 +72,22 @@ char play_again() {
     printf("Jugar de nuevo? S/N: ");
     do {
         option = toupper(getchar());
-        if (option != 'S' && option != 'N') {
-            printf("Jugar de nuevo? S/N: ");
-            getchar();
-        }
     } while (option != 'S' && option != 'N');
 
     return option != 'N';
+}
+
+bool check_draw(int dices[], int players) {
+    bool is_draw = true;
+
+    for (register int dice = 0; dice < players; dice++) {
+        if (dice > 0 && dices[dice] != dices[dice-1]) {
+            is_draw = false;
+            break;
+        }
+    }
+
+    return is_draw;
 }
 
 void print_dice(int player, int dice) {
