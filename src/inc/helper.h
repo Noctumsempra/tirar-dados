@@ -46,13 +46,6 @@ void show_splash_screen() {
     getchar();
 }
 
-void show_options(int userNumber) {
-    int option;
-
-    printf("Usuario %02d: ", userNumber);
-    scanf("%d", &option);
-}
-
 int prompt(const char* message) {
     int ch;
 
