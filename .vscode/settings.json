@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        ".sequelizerc": "javascript",
+        "cstdlib": "cpp"
+    },
+    "terminal.explorerKind": "external"
+}
